@@ -4,6 +4,7 @@ const path = require('path');
 
 const membersRouter = require('./routers/membersRouter');
 const tasksRouter = require('./routers/tasksRouter');
+const learningRouter = require('./routers/learningRouter');
 
 const app = express();
 
@@ -12,6 +13,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.get('/learning', (_req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'learning', 'index.html'));
 });
 
 app.get('/health', (_req, res) => {
@@ -24,6 +29,7 @@ app.get('/favicon.ico', (_req, res) => {
 
 app.use('/api/members', membersRouter);
 app.use('/api/tasks', tasksRouter);
+app.use('/api/learning', learningRouter);
 
 app.use((req, _res, next) => {
   next(createError(404, `Unknown resource ${req.method} ${req.originalUrl}`));

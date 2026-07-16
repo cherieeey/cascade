@@ -1,0 +1,337 @@
+#lesson-view {
+  width: min(1480px, calc(100% - 32px));
+  padding: 24px 0;
+}
+
+#lesson-view > .back {
+  margin: 0 0 14px;
+}
+
+.lesson-layout {
+  grid-template-columns: minmax(310px, 36%) 1fr;
+  gap: 0;
+  min-height: calc(100vh - 145px);
+  overflow: hidden;
+  border: 1px solid #cfd8d2;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 18px 55px rgb(31 70 53 / 10%);
+}
+
+.lesson-layout aside {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0;
+  border-radius: 0;
+  background: #f8faf8;
+  color: #14211d;
+}
+
+.objective-header,
+.workspace-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  padding: 16px 22px;
+  border-bottom: 1px solid #dce3dd;
+}
+
+.objective-header .eyebrow {
+  margin: 0;
+}
+
+.objective-header span,
+.workspace-topbar span {
+  color: #718078;
+  font-size: 12px;
+}
+
+.objective-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.objective-scroll h2 {
+  margin-bottom: 18px;
+  font-size: clamp(25px, 3vw, 36px);
+}
+
+.objective-scroll > p {
+  color: #586860;
+  line-height: 1.7;
+}
+
+.objective-task,
+.objective-checkpoint {
+  margin-top: 24px;
+  padding: 18px;
+  border-left: 4px solid #1f684f;
+  background: #e5f4ec;
+}
+
+.objective-checkpoint {
+  border-left-color: #d1a434;
+  background: #fff7dc;
+}
+
+.objective-task p,
+.objective-checkpoint p {
+  margin: 7px 0 0;
+  line-height: 1.55;
+}
+
+.file-label {
+  margin: 26px 0 9px;
+  color: #718078;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.workspace-files {
+  display: grid;
+  gap: 7px;
+}
+
+.workspace-files code {
+  overflow: hidden;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #edf1ee;
+  text-overflow: ellipsis;
+}
+
+.objective-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 20px;
+  border-top: 1px solid #dce3dd;
+}
+
+.objective-footer button,
+.workspace-bottom button {
+  padding: 10px 13px;
+  border: 1px solid #cbd5ce;
+  border-radius: 7px;
+  background: white;
+  color: #1f684f;
+  font-weight: 700;
+}
+
+.objective-footer button:disabled,
+.workspace-bottom button:disabled {
+  cursor: not-allowed;
+  opacity: .4;
+}
+
+#lesson-content {
+  min-width: 0;
+  background: #101713;
+}
+
+.workspace-topbar {
+  color: white;
+  background: #18231e;
+}
+
+.workspace-topbar > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.step-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.step-dots button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #506058;
+  border-radius: 50%;
+  background: transparent;
+  color: #9fb0a7;
+  font-size: 11px;
+}
+
+.step-dots button.active {
+  border-color: #8de0b8;
+  background: #1f684f;
+  color: white;
+}
+
+.step-dots button.done {
+  background: #dff3e8;
+  color: #1f684f;
+}
+
+.editor-window {
+  margin: 20px;
+  overflow: hidden;
+  border: 1px solid #334239;
+  border-radius: 10px;
+  background: #17201c;
+}
+
+.editor-tab {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 18px;
+  border-bottom: 1px solid #334239;
+  color: #dce7e1;
+}
+
+.editor-tab small {
+  color: #82958a;
+}
+
+.editor-body {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  height: 480px;
+  background: #111915;
+}
+
+.line-numbers {
+  overflow: hidden;
+  padding: 18px 10px;
+  color: #52635a;
+  text-align: right;
+  font: 14px/1.65 Consolas, monospace;
+}
+
+.line-numbers span {
+  display: block;
+}
+
+#workspace-code {
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  border: 0;
+  outline: 0;
+  resize: none;
+  color: #d7e9df;
+  background: transparent;
+  caret-color: #8de0b8;
+  font: 14px/1.65 Consolas, monospace;
+  tab-size: 2;
+}
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  border-top: 1px solid #334239;
+}
+
+.editor-actions button {
+  padding: 9px 14px;
+  border: 1px solid #506058;
+  border-radius: 6px;
+  background: transparent;
+  color: #dce7e1;
+}
+
+.editor-actions .check {
+  margin-left: auto;
+  border-color: #8de0b8;
+  background: #dff3e8;
+  color: #1f684f;
+  font-weight: 800;
+}
+
+.editor-actions span {
+  color: #71837a;
+  font-size: 11px;
+}
+
+.inline-feedback {
+  display: none;
+  margin: 0 20px 20px;
+  padding: 20px;
+  border: 1px solid #395346;
+  border-radius: 10px;
+  color: #dce7e1;
+  background: #1b2823;
+}
+
+.inline-feedback.show,
+.inline-feedback.loading {
+  display: block;
+}
+
+.feedback-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedback-heading span {
+  padding: 5px 8px;
+  border-radius: 12px;
+  background: #dff3e8;
+  color: #1f684f;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.feedback-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.feedback-columns p,
+.feedback-columns li,
+.feedback-next {
+  color: #b6c5bd;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.feedback-next {
+  padding-top: 12px;
+  border-top: 1px solid #395346;
+}
+
+.inline-feedback.error {
+  border-color: #8f493e;
+  color: #ffd8d1;
+}
+
+.workspace-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 20px;
+  color: #82958a;
+  font-size: 12px;
+}
+
+.workspace-bottom button {
+  border-color: #8de0b8;
+  background: #1f684f;
+  color: white;
+}
+
+@media (max-width: 850px) {
+  .lesson-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .objective-scroll {
+    max-height: 440px;
+  }
+
+  .feedback-columns {
+    grid-template-columns: 1fr;
+  }
+}

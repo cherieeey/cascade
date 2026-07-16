@@ -10,9 +10,16 @@ test('health endpoint reports that the app is ready', async ({ request }) => {
 test('home page shows the Cascade dashboard', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle('Cascade');
-  await expect(page.getByRole('heading', { name: 'Cascade' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Add a task' })).toBeVisible();
+  await expect(page).toHaveTitle(/Cascade/);
+  await expect(page.getByRole('heading', { name: /Understand real code/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Analyse a repository/ })).toBeVisible();
+});
+
+test('learning page accepts a GitHub repository', async ({ page }) => {
+  await page.goto('/learning');
+
+  await expect(page.getByRole('heading', { name: /What would you like/ })).toBeVisible();
+  await expect(page.getByPlaceholder('https://github.com/owner/repository')).toBeVisible();
 });
 
 test('unknown endpoints return 404', async ({ request }) => {

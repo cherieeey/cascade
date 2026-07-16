@@ -3,66 +3,70 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cascade</title>
+    <meta name="description" content="Turn real GitHub projects into personalised coding lessons.">
+    <title>Cascade — Learn by building</title>
     <link rel="stylesheet" href="/styles.css">
-    <script src="/app.js" defer></script>
   </head>
   <body>
-    <header>
-      <div>
-        <p class="eyebrow">TEAM WORKSPACE</p>
-        <h1>Cascade</h1>
-        <p class="subtitle">A simple task board for your three-person project.</p>
+    <nav class="nav">
+      <a class="brand" href="/"><span>C</span> Cascade</a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#outcomes">Outcomes</a>
+        <a class="button small" href="/learning">Explore a project</a>
       </div>
-      <span id="connection-status" class="status">Connecting…</span>
-    </header>
+    </nav>
 
     <main>
-      <section class="panel">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">NEW ITEM</p>
-            <h2>Add a task</h2>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AI-GUIDED PROJECT LEARNING</p>
+          <h1>Understand real code.<br><em>Build it yourself.</em></h1>
+          <p class="lead">Cascade turns a public GitHub repository into clear feature demos, personalised coding lessons, and helpful feedback as you build.</p>
+          <div class="hero-actions">
+            <a class="button" href="/learning">Analyse a repository <span>→</span></a>
+            <a class="text-link" href="#how">See how it works</a>
+          </div>
+          <div class="trust-row">
+            <span>✓ Personalised steps</span>
+            <span>✓ Code-aware hints</span>
+            <span>✓ Learn at your pace</span>
           </div>
         </div>
-
-        <form id="task-form">
-          <label>
-            Task title
-            <input id="title" name="title" placeholder="e.g. Design login page" required maxlength="100">
-          </label>
-          <label>
-            Assign to
-            <select id="assignee" name="assigneeId">
-              <option value="">Unassigned</option>
-            </select>
-          </label>
-          <button type="submit">Add task</button>
-        </form>
-        <p id="form-message" class="message" aria-live="polite"></p>
+        <div class="hero-visual" aria-label="Cascade learning preview">
+          <div class="window">
+            <div class="window-bar"><i></i><i></i><i></i><span>github.com/project</span></div>
+            <div class="analysis-card">
+              <div class="repo-icon">⌘</div>
+              <div><small>ANALYSING REPOSITORY</small><strong>student-portal</strong></div>
+              <span class="live">Live</span>
+            </div>
+            <div class="feature-preview">
+              <small>3 FEATURES FOUND</small>
+              <div><b>01</b><span><strong>User authentication</strong><small>Intermediate · 5 steps</small></span></div>
+              <div><b>02</b><span><strong>Task management</strong><small>Beginner · 4 steps</small></span></div>
+              <div><b>03</b><span><strong>Progress dashboard</strong><small>Intermediate · 6 steps</small></span></div>
+            </div>
+          </div>
+          <div class="float-card">AI lesson ready <b>→</b></div>
+        </div>
       </section>
 
-      <section class="panel">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">YOUR GROUP</p>
-            <h2>Team members</h2>
-          </div>
-          <span id="member-count" class="count">0 members</span>
+      <section id="how" class="section">
+        <div class="section-title"><p class="eyebrow">HOW IT WORKS</p><h2>From repository to real understanding</h2></div>
+        <div class="steps">
+          <article><span>01</span><h3>Connect a project</h3><p>Paste a public GitHub URL. Cascade safely reads the project structure and important source files.</p></article>
+          <article><span>02</span><h3>Choose a feature</h3><p>AI finds user-visible functionality and explains what each feature does and where it lives.</p></article>
+          <article><span>03</span><h3>Learn by building</h3><p>Follow a lesson matched to your level, submit your code, and receive hints without being handed the answer.</p></article>
         </div>
-        <div id="members" class="member-grid"></div>
       </section>
 
-      <section class="panel">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">PROJECT BOARD</p>
-            <h2>Tasks</h2>
-          </div>
-          <span id="task-count" class="count">0 tasks</span>
-        </div>
-        <div id="tasks" class="task-list"></div>
+      <section id="outcomes" class="cta">
+        <p class="eyebrow">START YOUR FIRST LESSON</p>
+        <h2>Your next project already contains<br>something worth learning.</h2>
+        <a class="button light" href="/learning">Explore a GitHub project →</a>
       </section>
     </main>
+    <footer><a class="brand" href="/"><span>C</span> Cascade</a><p>Learn from real projects. Build with confidence.</p><small>Member 1 feature · AI-guided learning</small></footer>
   </body>
 </html>
