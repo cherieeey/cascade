@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascade</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">TEAM WORKSPACE</p>
+        <h1>Cascade</h1>
+        <p class="subtitle">A simple task board for your three-person project.</p>
+      </div>
+      <span id="connection-status" class="status">Connecting…</span>
+    </header>
+
+    <main>
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">NEW ITEM</p>
+            <h2>Add a task</h2>
+          </div>
+        </div>
+
+        <form id="task-form">
+          <label>
+            Task title
+            <input id="title" name="title" placeholder="e.g. Design login page" required maxlength="100">
+          </label>
+          <label>
+            Assign to
+            <select id="assignee" name="assigneeId">
+              <option value="">Unassigned</option>
+            </select>
+          </label>
+          <button type="submit">Add task</button>
+        </form>
+        <p id="form-message" class="message" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR GROUP</p>
+            <h2>Team members</h2>
+          </div>
+          <span id="member-count" class="count">0 members</span>
+        </div>
+        <div id="members" class="member-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PROJECT BOARD</p>
+            <h2>Tasks</h2>
+          </div>
+          <span id="task-count" class="count">0 tasks</span>
+        </div>
+        <div id="tasks" class="task-list"></div>
+      </section>
+    </main>
+  </body>
+</html>

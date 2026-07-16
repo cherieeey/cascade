@@ -1,0 +1,40 @@
+{
+  "name": "cascade",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Three-person CICD project starter using Express, Prisma and Playwright",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "dotenv -e .env.development -- node --watch src/server.js",
+    "start": "node src/server.js",
+    "start:dev": "dotenv -e .env.development -- node src/server.js",
+    "start:test": "dotenv -e .env.test -- node src/server.js",
+    "lint": "eslint .",
+    "test": "dotenv -e .env.test -- playwright test --config=configs/playwright.config.js",
+    "test:ui": "dotenv -e .env.test -- playwright test --ui --config=configs/playwright.config.js",
+    "test:report": "playwright show-report",
+    "prisma:generate": "prisma generate",
+    "db:migrate:dev": "dotenv -e .env.development -- prisma migrate dev",
+    "db:migrate:test": "dotenv -e .env.test -- prisma migrate deploy",
+    "db:reset:test": "dotenv -e .env.test -- prisma migrate reset --force",
+    "db:seed:dev": "dotenv -e .env.development -- prisma db seed",
+    "postinstall": "prisma generate"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "dotenv": "^17.3.1",
+    "express": "^4.21.2",
+    "http-errors": "^2.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.57.0",
+    "dotenv-cli": "^11.0.0",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "prisma": "^6.18.0"
+  }
+}

@@ -1,0 +1,254 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 48px max(24px, calc((100% - 1080px) / 2));
+  color: white;
+  background: linear-gradient(125deg, #182848, #4b6cb7);
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 1.35rem;
+}
+
+.subtitle {
+  margin-bottom: 0;
+  color: #dce5ff;
+}
+
+.eyebrow {
+  margin-bottom: 6px;
+  color: #6c7a96;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+header .eyebrow {
+  color: #b9c9f4;
+}
+
+.status,
+.count {
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.status {
+  flex: 0 0 auto;
+  color: #194e37;
+  background: #c9f5df;
+}
+
+.status.offline {
+  color: #7a271a;
+  background: #fee4e2;
+}
+
+main {
+  display: grid;
+  gap: 22px;
+  width: min(1080px, calc(100% - 32px));
+  margin: 28px auto 60px;
+}
+
+.panel {
+  padding: 24px;
+  border: 1px solid #e5e9f2;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 10px 30px rgb(38 55 92 / 7%);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.count {
+  color: #4b5d82;
+  background: #eef2fa;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  align-items: end;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: #48546a;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+input,
+select,
+button {
+  min-height: 44px;
+  border-radius: 10px;
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0 12px;
+  border: 1px solid #ccd4e3;
+  background: white;
+}
+
+input:focus,
+select:focus {
+  outline: 3px solid #dce5ff;
+  border-color: #4b6cb7;
+}
+
+button {
+  padding: 0 20px;
+  border: 0;
+  color: white;
+  background: #3457a5;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #27478f;
+}
+
+.message {
+  min-height: 20px;
+  margin: 12px 0 0;
+  color: #4b5d82;
+  font-size: 0.85rem;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.member-card,
+.task {
+  border: 1px solid #e4e9f2;
+  border-radius: 13px;
+  background: #fafbfe;
+}
+
+.member-card {
+  padding: 17px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 13px;
+  border-radius: 12px;
+  color: white;
+  background: #4b6cb7;
+  font-weight: 800;
+}
+
+.member-card strong {
+  display: block;
+}
+
+.member-card small {
+  color: #6c7a96;
+}
+
+.task-list {
+  display: grid;
+  gap: 10px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 17px;
+}
+
+.task p {
+  margin-bottom: 3px;
+  font-weight: 750;
+}
+
+.task small,
+.empty {
+  color: #748097;
+}
+
+.task-badge {
+  padding: 6px 9px;
+  border-radius: 8px;
+  color: #3457a5;
+  background: #e8eefc;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.empty {
+  padding: 20px 0;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  header {
+    align-items: flex-start;
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  form,
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
